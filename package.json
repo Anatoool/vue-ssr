@@ -1,0 +1,23 @@
+{
+  "name": "vue-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anatoool/vue-ssr.git"
+  },
+  "keywords": [
+    "vue",
+    "ssr"
+  ],
+  "author": "Anatoliy Zaporozhets",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Anatoool/vue-ssr/issues"
+  },
+  "homepage": "https://github.com/Anatoool/vue-ssr#readme"
+}

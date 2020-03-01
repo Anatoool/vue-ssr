@@ -1,0 +1,1 @@
+Vue ssr template
