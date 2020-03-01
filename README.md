@@ -1,1 +1,3 @@
 Vue ssr template
+
+template
