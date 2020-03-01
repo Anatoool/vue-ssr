@@ -1,1 +1,1 @@
-Template: vue ssr
+Vue ssr template
