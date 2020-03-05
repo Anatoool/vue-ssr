@@ -8,11 +8,11 @@
       <br><br>
       Users count: {{ usersCount }}
       <br><br>
-      Test: {{ test }}
-      <div v-if="test === 123">
-        test === 123
-      </div>
+      Message: {{ message }}
+      <br>
+      Reversed message: {{ reversedMessage }}
       <br><br>
+      <button @click="addMessage">Add message</button>
       <ul id="example-1">
         <li v-for="item in items" v-bind:key="item.message">
           {{ item.message }}
@@ -33,6 +33,7 @@
       meta: [{ name: 'description', content: 'Vue ssr template' }],
     },
     mounted() {
+      this.messageCounter = 3;
       this.getUsersCount();
     },
     serverPrefetch () {
@@ -40,7 +41,7 @@
     },
     data: function() {
       return {
-        test: 123,
+        message: 'Hello',
         items: [
           { message: 'Message 1' },
           { message: 'Message 2' }
@@ -49,9 +50,10 @@
     },
     methods: {
       add() {
-        this.test = this.test === 123 ? 12345 : 123;
         this.$store.commit(COUNTER_MUTATIONS.INCREMENT, 1);
-        this.items.push({ message: 'Message 3' });
+      },
+      addMessage() {
+        this.items.push({ message: `Message ${this.messageCounter++}` });
       },
       getUsersCount() {
         return this.$store.dispatch(COUNTER_ACTIONS.GET_USERS_COUNT);
@@ -62,6 +64,9 @@
         count: state => state.counter.count,
         usersCount: state => state.counter.usersCount,
       }),
+      reversedMessage: function () {
+        return this.message.split('').reverse().join('')
+      }
     },
   }
 </script>
